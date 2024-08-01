@@ -61,12 +61,14 @@ y = pyth.win_perc
 
 ax = sns.scatterplot(data=pyth, x="pyth_exp", y="win_perc")
 ax.figure.set_size_inches(10, 6)
-ax.set_title("Expectativa pitagórica X porcentagem real de vitórias")
-ax.hlines(y = y.mean(), xmin = x.min(), xmax = x.max(), colors='gray', linestyles='dashed')
+ax.set_title("Expectativa pitagórica X porcentagem real de vitórias de cada time")
+ax.hlines(y = y.mean(), xmin = x.min(), xmax = x.max(), colors='black', linestyles='dashed')
 ax.vlines(x = x.mean(), ymin = y.min(), ymax = y.max(), colors='gray', linestyles='dashed')
+ax.text(0.487, 0.5, 'Média da porcentagem de vitórias', fontsize=10, color = 'black', va = "bottom")
+ax.text(0.4997, 0.58, 'Média da expectativa pitagórica', fontsize=10, color = 'gray', ha = "left")
+plt.show()
 ```
-
-![Dispersão](https://github.com/user-attachments/assets/8f95c32c-ed51-40a8-ac21-91aaac435566)
+![Dispersão](https://github.com/user-attachments/assets/2d33e7e4-b315-42c4-a4e5-8ec1fcaeb076)
 
 Em seguida, plotei o gráfico da regressão entre as variáveis. O comportamento linear se mostra ainda mais forte com a reta de regressão.
 
