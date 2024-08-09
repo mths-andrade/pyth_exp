@@ -55,28 +55,11 @@ Coloquei também os dois tipos de pontos e a expectativa pitagórica.
 Depois, plotei o gráfico de dispersão entre a expectativa e a porcentagem. 
 As linhas tracejadas são as médias de cada eixo. Como a porcentagem real cresce junto com a pitagórica, estima-se que a relação entre as duas variáveis seja quase perfeitamente linear positiva.
 
-```python
-x = pyth.pyth_exp
-y = pyth.win_perc
-
-ax = sns.scatterplot(data=pyth, x="pyth_exp", y="win_perc")
-ax.figure.set_size_inches(10, 6)
-ax.set_title("Expectativa pitagórica X porcentagem real de vitórias de cada time")
-ax.hlines(y = y.mean(), xmin = x.min(), xmax = x.max(), colors='black', linestyles='dashed')
-ax.vlines(x = x.mean(), ymin = y.min(), ymax = y.max(), colors='gray', linestyles='dashed')
-ax.text(0.487, 0.5, 'Média da porcentagem de vitórias', fontsize=10, color = 'black', va = "bottom")
-ax.text(0.4997, 0.58, 'Média da expectativa pitagórica', fontsize=10, color = 'gray', ha = "left")
-plt.show()
-```
-![Dispersão](https://github.com/user-attachments/assets/2d33e7e4-b315-42c4-a4e5-8ec1fcaeb076)
+![Dispersão](https://github.com/user-attachments/assets/c8ffd04e-8beb-4ed0-8aef-9ea40a90812a)
 
 Em seguida, plotei o gráfico da regressão entre as variáveis. O comportamento linear se mostra ainda mais forte com a reta de regressão.
 
-```python
-ax=sns.lmplot(x='pyth_exp',y='win_perc',data=pyth)
-ax.fig.suptitle("Expectativa pitagórica X porcentagem real de vitórias",y=1.05)
-```
-![Regressão](https://github.com/user-attachments/assets/6234659b-e6fd-4f0e-83ef-543b1a98c7e8)
+![Regressão](https://github.com/user-attachments/assets/13e30031-37f8-4ee8-bafb-a88343acb673)
 
 Ajustei o modelo pelo método dos mínimos quadrados ordinários com as funções ols e fit.
 
